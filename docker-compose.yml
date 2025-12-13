@@ -1,0 +1,17 @@
+---
+services:
+  webtop:
+    image: ghcr.io/linuxserver/webtop:ubuntu-mate # Tag del SO que se quiere instalar
+    container_name: linux-webtop
+    privileged: true # Necesario para algunos programas
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Cordoba
+      #- PASSWORD=admin # Habilitar acceso con contraseña
+    volumes:
+      -/ruta-absoluta-hasta/LinuxWebtop/config:/config # Reemplazar por su ruta
+    ports:
+      - 3000:3000
+    shm_size: "4gb" #Memoria compartida, según RAM disponible, no exceder el 25-30%
+    restart: unless-stopped
