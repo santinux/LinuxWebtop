@@ -22,10 +22,16 @@ sudo systemctl enable docker
 
 ## Levantar el contenedor
 ```bash
-sudo docker compose up -d
+docker compose up
+```
+
+## Listar los contenedores
+```bash
+docker images
 ```
 
 Una vez descargada la imagen y activo el servicio, podemos abrir el
 Webtop desde un navegador en http://localhost:3000/ o http://127.0.0.1:3000/
 que es lo mismo.
+Ya está listo para comenzar a instalar y desarrollar programas.
 
